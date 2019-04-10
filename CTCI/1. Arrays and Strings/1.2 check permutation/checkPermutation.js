@@ -3,6 +3,10 @@
  */
 
 const isPermutation = (str1, str2) => {
+    if(str1.length === 0 || str1.length !== str2.length) {
+        return false
+    }
+
     let hash = {}
 
     for(let i of str1) {
