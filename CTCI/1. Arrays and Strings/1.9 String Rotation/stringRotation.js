@@ -13,7 +13,7 @@ const isRotatedString = (s1, s2) => {
     if(s1.length !== s2.length) {
         return false
     }
-    return isSubstring(s1+s1, s2)
+    return isSubstring(s1+s1, s2)//make copy of s1, if s2 is substring of s1+s1, s2 is rotate of s1
 }
 
 const isSubstring = (str, substr) => {
