@@ -16,11 +16,11 @@
 var isPalindrome = function(head) {
     let fast = head,
         slow = head;
-    while(fast&&fast.next) {        
+    while(fast&&fast.next) {        //find middle --> slow
         slow = slow.next;
         fast = fast.next.next;
     }
-    if(fast) {                      
+    if(fast) {                      //if fast, linked list is odd
         slow = slow.next;
     }
     let prev = null;
