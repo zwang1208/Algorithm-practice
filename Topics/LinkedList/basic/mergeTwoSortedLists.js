@@ -31,6 +31,6 @@ var mergeTwoLists = function(l1, l2) {
         }
         temp = temp.next
     }
-    temp.next = l1 || l2; 
+    temp.next = l1 || l2; //any node left in l1 or l2
     return newHead.next    
 };
