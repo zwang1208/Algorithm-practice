@@ -17,14 +17,14 @@
 var copyRandomList = function(head) {
     if(!head) return head;
     
-    let cloneHead = new Node(head.val, null, null);
-    let newHead = cloneHead;
+    let cloneHead = new Node(head.val, null, null);     //clone original head
+    let newHead = cloneHead;    //create iterators
     let oldHead = head;
-    let hash = new Map();
+    let hash = new Map();       // create map structure
     
-    hash.set(oldHead, newHead)
+    hash.set(oldHead, newHead)  //key: old, value: new
     
-    while(oldHead.next) {
+    while(oldHead.next) {   //create each node, set in map
         newHead.next = new Node(oldHead.next.val, null, null);
         oldHead = oldHead.next;
         newHead = newHead.next;
@@ -34,8 +34,8 @@ var copyRandomList = function(head) {
     oldHead = head;
     newHead = cloneHead;
     
-    while(oldHead && newHead) {
-        newHead.random = oldHead.random ? hash.get(oldHead.random) : null;
+    while(oldHead && newHead) {     //traverse both
+        newHead.random = oldHead.random ? hash.get(oldHead.random) : null;  //connect random
         oldHead = oldHead.next;
         newHead = newHead.next;
     }
