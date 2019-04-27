@@ -28,9 +28,9 @@ var rotateRight = function(head, k) {
         tail = tail.next;
         len ++
     }
-    tail.next = head      
+    tail.next = head      //circle the list
     
-    let newHeadIndex = len - k%len
+    let newHeadIndex = len - k%len     //find new head index
     
     for(let i = 0; i<newHeadIndex; i++) {
         tail = tail.next
