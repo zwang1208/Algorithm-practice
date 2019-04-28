@@ -1,1 +1,1 @@
-# Leetcode-practice
+# Algorithm-practice
