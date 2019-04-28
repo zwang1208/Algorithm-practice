@@ -2,7 +2,7 @@
  * Return Kth to Last: Implement an algorithm to find the kth to last element of a singly linked list.
  */
 
-let returnKthToLast = (head, k) => {    //two pointer
+let returnKthToLast = (head, k) => {    //two pointer  time: O(n), space: O(1)
     if(!head) {
         throw new Error('invalid list');
     }
@@ -23,3 +23,5 @@ let returnKthToLast = (head, k) => {    //two pointer
 
     return p2.val;
 }
+
+// 2. find length of list, move node = head len-k distance
