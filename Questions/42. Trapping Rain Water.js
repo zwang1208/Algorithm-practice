@@ -13,7 +13,7 @@
  * @param {number[]} height
  * @return {number}
  */
-var trap = function(height) {
+var trap = function(height) {           // two pointer: left, right
     let leftPointer = 0;
     let rightPointer = height.length - 1;
     let leftMax = 0;
