@@ -21,5 +21,5 @@ var spiralOrder = function(matrix, result = []) {
         }
     }
     matrix.shift();
-    return spiralOrder(matrix.reverse(), result)
+    return spiralOrder(matrix.reverse(), result) //recursive
 };
