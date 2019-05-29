@@ -15,24 +15,18 @@
  * @return {TreeNode}
  */
 var buildTree = function(inorder, postorder) {
-    let map = inorder.reduce((acc,v,i) => {
-        acc[v] = i;
-        return acc;
-    },{})
     
-    let lastIndex = postorder.length - 1
-    
-    return build(0, postorder.length);
+    return build(0, postorder.length - 1);
     
     function build(l, r) {
-        if(l >= r) {
+        if(l > r) {
             return null;
         }
-        let cur = postorder[lastIndex];
-        lastIndex--;
+        let cur = postorder.pop();
+        let i = inorder.indexOf(cur)
         let node = new TreeNode(cur);
-        node.right = build(map[cur] +1, r);
-        node.left = build(l, map[cur]);
+        node.right = build(i+1, r);
+        node.left = build(l, i-1);
         return node;
     }
 };
